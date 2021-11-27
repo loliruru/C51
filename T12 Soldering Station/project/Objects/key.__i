@@ -1,0 +1,1 @@
+"..\SRC\key.c" OPTIMIZE (8,SPEED) BROWSE INCDIR(..\SRC) DEBUG OBJECTEXTEND PRINT(.\Listings\key.lst) OBJECT(.\Objects\key.obj)
