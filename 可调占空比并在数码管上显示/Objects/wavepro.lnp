@@ -1,0 +1,3 @@
+".\Objects\wave.obj" 
+TO ".\Objects\wavepro" 
+PRINT(".\Listings\wavepro.m51") RAMSIZE(256) 

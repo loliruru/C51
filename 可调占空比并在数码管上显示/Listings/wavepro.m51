@@ -1,0 +1,321 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/23/2021  23:11:17  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\wave.obj TO .\Objects\wavepro PRINT (.\Listings\wavepro.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\wave.obj (WAVE)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPADD)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?CASTF)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (SIN)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPSERIES)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LNEG)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LLDCODE0)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\wavepro (WAVE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000FH     UNIT         ?DT?WAVE
+            DATA    0017H     0006H     UNIT         _DATA_GROUP_
+                    001DH     0003H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?WAVE
+            BIT     0020H.1   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.2   0000H.6                *** GAP ***
+            IDATA   0021H     0082H     UNIT         ?ID?WAVE
+            IDATA   00A3H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0008H                  *** GAP ***
+            CODE    000BH     0003H     ABSOLUTE     
+            CODE    000EH     000BH     UNIT         ?C_INITSEG
+                    0019H     0002H                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+            CODE    001EH     042DH     UNIT         ?C?LIB_CODE
+            CODE    044BH     016EH     UNIT         ?PR?SIN?SIN
+            CODE    05B9H     00A3H     UNIT         ?PR?DISPOSEWAVE?WAVE
+            CODE    065CH     008CH     UNIT         ?C_C51STARTUP
+            CODE    06E8H     0083H     UNIT         ?PR?INTT1?WAVE
+            CODE    076BH     0053H     UNIT         ?PR?DISPLAY?WAVE
+            CODE    07BEH     003CH     UNIT         ?PR?DISPOSEKEY?WAVE
+            CODE    07FAH     002BH     UNIT         ?PR?INTT0?WAVE
+            CODE    0825H     0022H     UNIT         ?PR?MAIN?WAVE
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/23/2021  23:11:17  PAGE 2
+
+
+            CODE    0847H     0010H     UNIT         ?CO?WAVE
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\wavepro (WAVE)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?PR?INTT1?WAVE                 -----    -----      -----    -----
+  +--> ?CO?WAVE
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP                  -----    -----      -----    -----
+  +--> ?PR?MAIN?WAVE
+  +--> ?C_INITSEG
+
+?PR?MAIN?WAVE                  -----    -----      -----    -----
+  +--> ?PR?DISPOSEWAVE?WAVE
+  +--> ?PR?DISPLAY?WAVE
+  +--> ?PR?DISPOSEKEY?WAVE
+
+?PR?DISPOSEWAVE?WAVE           -----    -----      0017H    0002H
+  +--> ?PR?SIN?SIN
+
+?PR?SIN?SIN                    0020H.1  0000H.1    0019H    0004H
+
+?PR?DISPLAY?WAVE               -----    -----      -----    -----
+  +--> ?CO?WAVE
+
+?PR?DISPOSEKEY?WAVE            -----    -----      -----    -----
+  +--> ?PR?DISPOSEWAVE?WAVE
+  +--> ?PR?DISPLAY?WAVE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\wavepro (WAVE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        WAVE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  B:00A8H.7       PUBLIC        EA
+  D:0008H         PUBLIC        nDelayKey
+  D:000AH         PUBLIC        cKeyCode
+  D:000BH         PUBLIC        cKey
+  D:000CH         PUBLIC        acLED
+  D:0010H         PUBLIC        Feq
+  C:0825H         PUBLIC        main
+  C:07FAH         PUBLIC        IntT0
+  C:06E8H         PUBLIC        IntT1
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/23/2021  23:11:17  PAGE 3
+
+
+  C:0847H         PUBLIC        acLEDCS
+  D:0089H         PUBLIC        TMOD
+  I:0021H         PUBLIC        cDA_Data
+  C:07BEH         PUBLIC        DisposeKEY
+  I:00A1H         PUBLIC        uT
+  B:00A8H.1       PUBLIC        ET0
+  B:00A8H.3       PUBLIC        ET1
+  D:008CH         PUBLIC        TH0
+  D:008DH         PUBLIC        TH1
+  D:008AH         PUBLIC        TL0
+  D:0012H         PUBLIC        num
+  B:0088H.4       PUBLIC        TR0
+  B:0088H.6       PUBLIC        TR1
+  D:0013H         PUBLIC        cScanIndex
+  D:0014H         PUBLIC        cMode
+  B:0020H.0       PUBLIC        bStill
+  C:05B9H         PUBLIC        DisposeWave
+  D:0015H         PUBLIC        nTimer
+  C:076BH         PUBLIC        display
+  C:084BH         PUBLIC        acLedSegCode
+  -------         PROC          DISPLAY
+  C:076BH         LINE#         32
+  C:076BH         LINE#         33
+  C:076BH         LINE#         34
+  C:0784H         LINE#         35
+  C:07A4H         LINE#         36
+  C:07BDH         LINE#         37
+  -------         ENDPROC       DISPLAY
+  -------         PROC          DISPOSEWAVE
+  -------         DO            
+  D:0017H         SYMBOL        i
+  D:0018H         SYMBOL        j
+  -------         ENDDO         
+  C:05B9H         LINE#         39
+  C:05B9H         LINE#         40
+  C:05B9H         LINE#         43
+  C:05BFH         LINE#         44
+  C:05BFH         LINE#         45
+  C:05C1H         LINE#         46
+  C:05C1H         LINE#         47
+  C:05CFH         LINE#         48
+  C:05D6H         LINE#         49
+  C:05D9H         LINE#         50
+  C:05DCH         LINE#         51
+  C:05DCH         LINE#         52
+  C:05EDH         LINE#         53
+  C:05F6H         LINE#         54
+  C:05F6H         LINE#         56
+  C:05F6H         LINE#         57
+  C:05F9H         LINE#         58
+  C:063DH         LINE#         59
+  C:063DH         LINE#         60
+  C:0653H         LINE#         61
+  C:0657H         LINE#         62
+  C:065BH         LINE#         63
+  -------         ENDPROC       DISPOSEWAVE
+  -------         PROC          DISPOSEKEY
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/23/2021  23:11:17  PAGE 4
+
+
+  C:07BEH         LINE#         66
+  C:07BEH         LINE#         67
+  C:07BEH         LINE#         68
+  C:07CBH         LINE#         69
+  C:07CBH         LINE#         70
+  C:07CBH         LINE#         71
+  C:07D3H         LINE#         72
+  C:07D3H         LINE#         73
+  C:07D5H         LINE#         74
+  C:07D5H         LINE#         75
+  C:07DDH         LINE#         76
+  C:07E3H         LINE#         77
+  C:07E5H         LINE#         78
+  C:07E5H         LINE#         79
+  C:07E7H         LINE#         80
+  C:07EAH         LINE#         81
+  C:07F0H         LINE#         82
+  C:07F0H         LINE#         83
+  C:07F0H         LINE#         84
+  C:07F3H         LINE#         85
+  C:07F6H         LINE#         86
+  C:07F9H         LINE#         87
+  -------         ENDPROC       DISPOSEKEY
+  -------         PROC          MAIN
+  C:0825H         LINE#         89
+  C:0825H         LINE#         90
+  C:0825H         LINE#         91
+  C:0828H         LINE#         92
+  C:082BH         LINE#         93
+  C:082DH         LINE#         94
+  C:082FH         LINE#         95
+  C:0831H         LINE#         96
+  C:0833H         LINE#         97
+  C:0835H         LINE#         98
+  C:0838H         LINE#         99
+  C:083BH         LINE#         100
+  C:083EH         LINE#         101
+  C:083EH         LINE#         102
+  C:083EH         LINE#         103
+  C:0842H         LINE#         104
+  C:0842H         LINE#         105
+  C:0845H         LINE#         106
+  C:0845H         LINE#         107
+  -------         ENDPROC       MAIN
+  -------         PROC          INTT0
+  C:07FAH         LINE#         109
+  C:0805H         LINE#         111
+  C:080AH         LINE#         112
+  C:080EH         LINE#         113
+  C:0819H         LINE#         114
+  C:081CH         LINE#         115
+  -------         ENDPROC       INTT0
+  -------         PROC          INTT1
+  C:06E8H         LINE#         117
+  C:06F9H         LINE#         119
+  C:06FCH         LINE#         120
+  C:06FFH         LINE#         121
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/23/2021  23:11:17  PAGE 5
+
+
+  C:0702H         LINE#         123
+  C:0708H         LINE#         124
+  C:0708H         LINE#         125
+  C:070EH         LINE#         126
+  C:0712H         LINE#         127
+  C:071AH         LINE#         129
+  C:071AH         LINE#         130
+  C:071CH         LINE#         131
+  C:071CH         LINE#         132
+  C:071EH         LINE#         134
+  C:071EH         LINE#         135
+  C:0726H         LINE#         136
+  C:072CH         LINE#         137
+  C:072CH         LINE#         138
+  C:0732H         LINE#         139
+  C:0736H         LINE#         140
+  C:0736H         LINE#         141
+  C:0739H         LINE#         142
+  C:0739H         LINE#         143
+  C:0739H         LINE#         144
+  C:0739H         LINE#         145
+  C:074EH         LINE#         146
+  C:0759H         LINE#         147
+  C:075CH         LINE#         148
+  -------         ENDPROC       INTT1
+  -------         ENDMOD        WAVE
+
+  -------         MODULE        ?C?FPADD
+  C:0025H         PUBLIC        ?C?FPADD
+  C:0021H         PUBLIC        ?C?FPSUB
+  -------         ENDMOD        ?C?FPADD
+
+  -------         MODULE        ?C?FPMUL
+  C:0116H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FPDIV
+  C:021FH         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FCAST
+  C:02C6H         PUBLIC        ?C?FCASTC
+  C:02C1H         PUBLIC        ?C?FCASTI
+  C:02BCH         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        ?C?CASTF
+  C:02FAH         PUBLIC        ?C?CASTF
+  -------         ENDMOD        ?C?CASTF
+
+  -------         MODULE        SIN
+  C:0493H         PUBLIC        _COS
+  C:04A9H         PUBLIC        _SIN
+  C:04DBH         PUBLIC        _TAN
+  -------         ENDMOD        SIN
+
+  -------         MODULE        ?C?UIDIV
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/23/2021  23:11:17  PAGE 6
+
+
+  C:03C8H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        ?C?LNEG
+  C:041DH         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?LLDCODE
+  C:042BH         PUBLIC        ?C?LLDCODE
+  -------         ENDMOD        ?C?LLDCODE
+
+  -------         MODULE        ?C?LLDCODE0
+  C:043BH         PUBLIC        ?C?LLDCODE0
+  -------         ENDMOD        ?C?LLDCODE0
+
+Program Size: data=160.2 xdata=0 code=2125
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
